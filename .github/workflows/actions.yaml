@@ -47,7 +47,7 @@ jobs:
         with:
           task-definition: nodejs-td
           container-name: nodejs
-          image: ${{ steps.build-image.outputs.image }}
+          image: dipendrac3/cicd-test:latest
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@df9643053eda01f169e64a0e60233aacca83799a
