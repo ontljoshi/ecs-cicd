@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+env:
+  ECS_TASK_DEFINITION: .github/workflows/task-definition.json      # set this to the path to your Amazon ECS task definition                                           # file, e.g. .aws/task-definition.json
+
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -45,7 +48,7 @@ jobs:
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition: .github/workflows/task-definition.json
+          task-definition: ${{ env.ECS_TASK_DEFINITION }}
           container-name: nodejs
           image: dipendrac3/cicd-test:latest
 
