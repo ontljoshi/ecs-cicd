@@ -31,4 +31,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: dipendrac3/cicd-test:dev
+          tags: dipendrac3/cicd-test:latest
