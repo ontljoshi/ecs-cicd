@@ -28,14 +28,14 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: dipendrac3/cicd-test:${{github.run_number}}
+          tags: ontljoshi/cicd-test:${{github.run_number}}
 
       - name: Build and push latest
         id: build-image
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: dipendrac3/cicd-test:latest
+          tags: ontljoshi/cicd-test:latest
       
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@0e613a0980cbf65ed5b322eb7a1e075d28913a83
@@ -55,7 +55,7 @@ jobs:
         with:
           task-definition: task-definition.json
           container-name: nodejs
-          image: dipendrac3/cicd-test:latest
+          image: ontljoshi/cicd-test:latest
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
