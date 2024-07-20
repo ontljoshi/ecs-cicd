@@ -1,0 +1,66 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:eu-west-2:767397725607:task-definition/nodejs-td:3",
+    "containerDefinitions": [
+        {
+            "name": "nginx-test",
+            "image": "767397725607.dkr.ecr.eu-west-2.amazonaws.com/nodejs-test:latest",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "name": "nginx-test-80-tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "systemControls": []
+        }
+    ],
+    "family": "nodejs-td",
+    "taskRoleArn": "arn:aws:iam::767397725607:role/taskrole2",
+    "executionRoleArn": "arn:aws:iam::767397725607:role/taskrole2",
+    "networkMode": "awsvpc",
+    "revision": 3,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "registeredAt": "2024-07-12T15:28:37.423000+01:00",
+    "registeredBy": "arn:aws:iam::767397725607:root"
+}
