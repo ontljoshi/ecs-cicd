@@ -54,7 +54,7 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           task-definition: task-definition.json
-          container-name: nodejs-td
+          container-name: nodejs-test
           image: ontljoshi/nginx-test:latest
 
       - name: Deploy Amazon ECS task definition
