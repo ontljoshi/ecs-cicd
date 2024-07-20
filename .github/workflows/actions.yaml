@@ -55,7 +55,7 @@ jobs:
         with:
           task-definition: task-definition.json
           container-name: nodejs-test
-          image: 767397725607.dkr.ecr.eu-west-2.amazonaws.com/nodejs-test:latest
+          image: ontljoshi/cicd-test
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
